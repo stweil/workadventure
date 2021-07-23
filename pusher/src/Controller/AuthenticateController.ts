@@ -50,6 +50,7 @@ export class AuthenticateController extends BaseController {
             const { code, nonce } = parse(req.getQuery());
             try {
                 const userInfo = await openIDClient.getUserInfo(code as string, nonce as string);
+                console.log(userInfo);
                 const email = userInfo.email || userInfo.sub;
                 if (!email) {
                     throw new Error("No email in the response");

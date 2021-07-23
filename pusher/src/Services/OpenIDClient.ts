@@ -24,7 +24,7 @@ class OpenIDClient {
         return this.initClient().then((client) => {
             return client.authorizationUrl({
                 scope: "openid email",
-                prompt: "consent",
+                prompt: "login",
                 state: state,
                 nonce: nonce,
             });
